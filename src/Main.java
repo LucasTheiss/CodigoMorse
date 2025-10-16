@@ -6,6 +6,10 @@ public class Main {
 
         for (char item: lista){ a.inserir(item); }
 
-        System.out.println(a.searchInterface("-.-. ..-"));
+        a.remove('E');
+
+        System.out.println(a.search("-.-. ."));
+
+        a.printTree();
     }
 }
