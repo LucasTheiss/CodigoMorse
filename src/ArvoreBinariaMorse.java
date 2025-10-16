@@ -67,9 +67,7 @@ public class ArvoreBinariaMorse {
         return search(dir, c, depth + 1);
     }
 
-    public void remove(char c){
-        raiz = remove(raiz, getMorseCode(c), 0);
-    }
+    public void remove(char c){ raiz = remove(raiz, getMorseCode(c), 0); }
 
     private Node remove(Node cur, String c, int depth){
         if (cur == null ){ return null; }
@@ -89,9 +87,7 @@ public class ArvoreBinariaMorse {
         return cur;
     }
 
-    public void printTree() {
-        printTree(raiz, "", true);
-    }
+    public void printTree() { printTree(raiz, "", true); }
 
     private void printTree(Node node, String prefix, boolean isTail) {
         if (node == null) return;
