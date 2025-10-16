@@ -7,5 +7,7 @@ public class Node {
         this.c = c;
     }
 
-    public Node(){}
+    public Node(){
+        c = ' ';
+    }
 }
