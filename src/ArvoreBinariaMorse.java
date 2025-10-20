@@ -1,27 +1,7 @@
 public class ArvoreBinariaMorse {
     Node raiz = new Node();
-    char[] caracteres = {
-            'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
-            'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
-            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
-    };
 
-    String[] morse = {".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---",
-            "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-",
-            "..-", "...-", ".--", "-..-", "-.--", "--..",
-            "-----", ".----", "..---", "...--", "....-", ".....",
-            "-....", "--...", "---..", "----."};
-
-    public String getMorseCode(char c){
-        int i = 0;
-        for (; i < 36; i++){
-            if (c == caracteres[i]){ break; }
-        }
-        return morse[i];
-    }
-
-    public void inserir(char c){
-        String codigo = getMorseCode(c);
+    public void inserir(String codigo, char c){
         Node cur = raiz;
 
         for (int j = 0; j < codigo.length(); j++){
@@ -67,7 +47,7 @@ public class ArvoreBinariaMorse {
         return search(dir, c, depth + 1);
     }
 
-    public void remove(char c){ raiz = remove(raiz, getMorseCode(c), 0); }
+    public void remove(String codigo){ raiz = remove(raiz, codigo, 0); }
 
     private Node remove(Node cur, String c, int depth){
         if (cur == null ){ return null; }
@@ -87,6 +67,8 @@ public class ArvoreBinariaMorse {
         return cur;
     }
 
+
+    // funcao apenas para visualizacao
     public void printTree() { printTree(raiz, "", true); }
 
     private void printTree(Node node, String prefix, boolean isTail) {
